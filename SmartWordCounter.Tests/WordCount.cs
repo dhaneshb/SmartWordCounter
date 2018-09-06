@@ -14,11 +14,12 @@ namespace SmartWordCounter.Tests
         {
             this.output = output;
         }
-        //Xunit has a Fetaure Which allows us to create parameterised tests
+        //Xunit has a Fetaure called Theory Which allows us to create parameterised tests
         //This Theory attribute denotes a parameterised Test
         //We can pass multiple parameters by using inline data attribute as you can see below,
         // Based on the number of inline data attributes and its values, xunit automatically creates a test case.
         [Theory]
+        //Change  the values with your file location
         [InlineData(@"C:\Users\DB.EV-ECOMMERCE\source\repos\SimCorp'sSmartWordCounter\WhySimCorp.txt")]
         [InlineData(@"C:\Temp\SimCorps_UserStory.txt")]
         public void Test_GetWordCountOccurences(string filepath)

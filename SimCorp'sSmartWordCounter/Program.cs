@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-
 namespace SimCorp_sSmartWordCounter
 {
     public class WordCountDetails
@@ -9,7 +8,8 @@ namespace SimCorp_sSmartWordCounter
         private static readonly char[] separators = { ' ' };
         static void Main(string[] args)
         {
-            string lTextfile = Environment.CurrentDirectory + "\\WhySimCorp.txt";
+            //Change  the values with your file location
+            string lTextfile = Environment.CurrentDirectory+ "\\WhySimCorp.txt";
             var lCount= GetWordCountOccurrences(lTextfile);
             foreach (KeyValuePair<string, int> words in lCount)
             {
