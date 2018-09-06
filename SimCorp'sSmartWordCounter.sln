@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimCorp'sSmartWordCounter", "SimCorp'sSmartWordCounter\SimCorp'sSmartWordCounter.csproj", "{69C53612-177C-4FC3-8F59-840267CAED6C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartWordCounter.Tests", "SmartWordCounter.Tests\SmartWordCounter.Tests.csproj", "{43D89600-B17F-4AB6-88DD-EAE88903DB37}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{69C53612-177C-4FC3-8F59-840267CAED6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69C53612-177C-4FC3-8F59-840267CAED6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{69C53612-177C-4FC3-8F59-840267CAED6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43D89600-B17F-4AB6-88DD-EAE88903DB37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43D89600-B17F-4AB6-88DD-EAE88903DB37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43D89600-B17F-4AB6-88DD-EAE88903DB37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43D89600-B17F-4AB6-88DD-EAE88903DB37}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
