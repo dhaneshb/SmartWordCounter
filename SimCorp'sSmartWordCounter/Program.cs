@@ -25,31 +25,43 @@ namespace SimCorp_sSmartWordCounter
         public static IDictionary<string, int> GetWordCountOccurrences(string filepath)
         {
             var lwordOccurrences = new Dictionary<string, int>();
-            #region ReadValuesFromFilepathLocation
-            using (var fileStream = File.Open(filepath, FileMode.Open, FileAccess.Read))
-            using (var streamReader = new StreamReader(fileStream))
+            try
             {
-            #endregion
-                string ltextfromFile;
-                while ((ltextfromFile = streamReader.ReadLine()) != null)
+                #region ReadValuesFromFilepathLocation
+                using (var fileStream = File.Open(filepath, FileMode.Open, FileAccess.Read))
+                using (var streamReader = new StreamReader(fileStream))
                 {
-                    #region Words after splitting from the text
-                    var Words = ltextfromFile.Split(separators, StringSplitOptions.RemoveEmptyEntries);
                     #endregion
-                    #region Looping through every work to check the word Occurrences
-                    foreach (var word in Words)
+                    string ltextfromFile;
+                    while ((ltextfromFile = streamReader.ReadLine()) != null)
                     {
-                        if (lwordOccurrences.ContainsKey(word))
+                        #region Words after splitting from the text
+                        var Words = ltextfromFile.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+                        #endregion
+                        #region Looping through every work to check the word Occurrences
+                        foreach (var word in Words)
                         {
-                            lwordOccurrences[word] = lwordOccurrences[word] + 1;
+                            if (lwordOccurrences.ContainsKey(word))
+                            {
+                                lwordOccurrences[word] = lwordOccurrences[word] + 1;
+                            }
+                            else
+                            {
+                                lwordOccurrences.Add(word, 1);
+                            }
                         }
-                        else
-                        {
-                            lwordOccurrences.Add(word, 1);
-                        }
+                        #endregion
                     }
-                    #endregion
                 }
+            }
+            catch (FileNotFoundException Fex)
+            {
+                Console.WriteLine("Could not find the file in: " + filepath);
+                Console.WriteLine("Solution: Verify that the file exists in the provided path.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
             #region Word's and its occurences
             return lwordOccurrences;
